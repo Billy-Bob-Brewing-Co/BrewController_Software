@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+environment/workspace/IDF_PATH/delimiter=;
+environment/workspace/IDF_PATH/operation=replace
+environment/workspace/IDF_PATH/value=C\:\\Users\\User\\Desktop\\esp-idf
+environment/workspace/IDF_PYTHON_ENV_PATH,\ IDF_PYTHON_EXPORT_PATH,\ VIRTUALENV_PYTHON/delimiter=;
+environment/workspace/IDF_PYTHON_ENV_PATH,\ IDF_PYTHON_EXPORT_PATH,\ VIRTUALENV_PYTHON/operation=replace
+environment/workspace/IDF_PYTHON_ENV_PATH,\ IDF_PYTHON_EXPORT_PATH,\ VIRTUALENV_PYTHON/value=\ get_python_env_path()
+environment/workspace/append=true
+environment/workspace/appendContributed=true

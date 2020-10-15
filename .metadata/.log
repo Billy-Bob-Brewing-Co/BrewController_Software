@@ -1,0 +1,445 @@
+!SESSION 2020-08-19 14:18:39.018 -----------------------------------------------
+eclipse.buildId=4.16.0.I20200604-0540
+java.version=13.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_AU
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-08-19 14:20:12.786
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\User'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2020-08-19 14:22:44.141 -----------------------------------------------
+eclipse.buildId=4.16.0.I20200604-0540
+java.version=13.0.2
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_AU
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-08-19 14:23:03.957
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\User'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:23:23.411
+!MESSAGE Command id:com.espressif.idf.ui.command.install
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:23:23.418
+!MESSAGE IDF_PATH :null
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:23:23.419
+!MESSAGE GIT path:null
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:23:23.422
+!MESSAGE No Python installations found in the system.
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:34:12.882
+!MESSAGE Command id:com.espressif.idf.ui.command.install
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:34:12.883
+!MESSAGE IDF_PATH :null
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:34:12.883
+!MESSAGE GIT path:null
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:34:12.884
+!MESSAGE No Python installations found in the system.
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:34:59.143
+!MESSAGE Updating environment variables with key:IDF_PATH value:C:\Users\User\Desktop\esp-idf
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:34:59.150
+!MESSAGE {USERDOMAIN_ROAMINGPROFILE=USER-PC, LOCALAPPDATA=C:\Users\User\AppData\Local, PROCESSOR_LEVEL=23, FP_NO_HOST_CHECK=NO, USERDOMAIN=USER-PC, FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer, LOGONSERVER=\\USER-PC, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\, SystemDrive=C:, BESIEGE_UNITY_ASSEMBLIES=F:/Program Files (x86)/Steam/steamapps/common/Besiege/Besiege_Data\Managed/, OneDrive=C:\Users\User\OneDrive, APPDATA=C:\Users\User\AppData\Roaming, USERNAME=User, ProgramFiles(x86)=C:\Program Files (x86), BESIEGE_GAME_ASSEMBLIES=F:/Program Files (x86)/Steam/steamapps/common/Besiege/Besiege_Data\Managed/, VBOX_MSI_INSTALL_PATH=F:\Program Files\Oracle\VirtualBox\, CommonProgramFiles=C:\Program Files\Common Files, Path=F:/Program Files/Java/jdk-13.0.2/bin/server;F:/Program Files/Java/jdk-13.0.2/bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\Program Files (x86)\Python37-32\Scripts\;F:\Program Files (x86)\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;F:\Program Files\MATLAB\R2019a\bin;F:\Program Files\MiKTeX 2.9\miktex\bin\x64\;F:\Program Files\PuTTY\;C:\Users\User\AppData\Local\Microsoft\WindowsApps;;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin;D:\;, FPS_BROWSER_USER_PROFILE_STRING=Default, PYTHONPATH=C:/SimpleCV1.3/files/opencv/build/python/2.7/;C:/OpenCV2.3/opencv/build/python/2.7/;, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW, DriverData=C:\Windows\System32\Drivers\DriverData, OS=Windows_NT, COMPUTERNAME=USER-PC, PROCESSOR_REVISION=0802, CommonProgramW6432=C:\Program Files\Common Files, ComSpec=C:\WINDOWS\system32\cmd.exe, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\User, SystemRoot=C:\WINDOWS, TEMP=C:\Users\User\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD, USERPROFILE=C:\Users\User, TMP=C:\Users\User\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=12, windir=C:\WINDOWS, =::=::\}
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:34:59.562
+!MESSAGE {USERDOMAIN_ROAMINGPROFILE=USER-PC, LOCALAPPDATA=C:\Users\User\AppData\Local, PROCESSOR_LEVEL=23, FP_NO_HOST_CHECK=NO, USERDOMAIN=USER-PC, FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer, LOGONSERVER=\\USER-PC, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\, SystemDrive=C:, BESIEGE_UNITY_ASSEMBLIES=F:/Program Files (x86)/Steam/steamapps/common/Besiege/Besiege_Data\Managed/, OneDrive=C:\Users\User\OneDrive, APPDATA=C:\Users\User\AppData\Roaming, USERNAME=User, ProgramFiles(x86)=C:\Program Files (x86), BESIEGE_GAME_ASSEMBLIES=F:/Program Files (x86)/Steam/steamapps/common/Besiege/Besiege_Data\Managed/, VBOX_MSI_INSTALL_PATH=F:\Program Files\Oracle\VirtualBox\, CommonProgramFiles=C:\Program Files\Common Files, Path=F:/Program Files/Java/jdk-13.0.2/bin/server;F:/Program Files/Java/jdk-13.0.2/bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\Program Files (x86)\Python37-32\Scripts\;F:\Program Files (x86)\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;F:\Program Files\MATLAB\R2019a\bin;F:\Program Files\MiKTeX 2.9\miktex\bin\x64\;F:\Program Files\PuTTY\;C:\Users\User\AppData\Local\Microsoft\WindowsApps;;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin;D:\;, FPS_BROWSER_USER_PROFILE_STRING=Default, PYTHONPATH=C:/SimpleCV1.3/files/opencv/build/python/2.7/;C:/OpenCV2.3/opencv/build/python/2.7/;, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW, DriverData=C:\Windows\System32\Drivers\DriverData, OS=Windows_NT, COMPUTERNAME=USER-PC, PROCESSOR_REVISION=0802, CommonProgramW6432=C:\Program Files\Common Files, ComSpec=C:\WINDOWS\system32\cmd.exe, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\User, SystemRoot=C:\WINDOWS, TEMP=C:\Users\User\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD, USERPROFILE=C:\Users\User, TMP=C:\Users\User\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=12, windir=C:\WINDOWS, =::=::\}
+
+!ENTRY com.espressif.idf.core 4 1 2020-08-19 14:35:00.132
+!MESSAGE Traceback (most recent call last):
+  File "C:\Users\User\Desktop\esp-idf\tools\idf_tools.py", line 1387, in <module>
+    main(sys.argv[1:])
+  File "C:\Users\User\Desktop\esp-idf\tools\idf_tools.py", line 1383, in main
+    action_func(args)
+  File "C:\Users\User\Desktop\esp-idf\tools\idf_tools.py", line 1008, in action_export
+    idf_python_env_path, idf_python_export_path, virtualenv_python = get_python_env_path()
+  File "C:\Users\User\Desktop\esp-idf\tools\idf_tools.py", line 847, in get_python_env_path
+    cwd=global_idf_path, env=os.environ).decode()
+  File "F:\Program Files (x86)\Python37-32\lib\subprocess.py", line 395, in check_output
+    **kwargs).stdout
+  File "F:\Program Files (x86)\Python37-32\lib\subprocess.py", line 472, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "F:\Program Files (x86)\Python37-32\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "F:\Program Files (x86)\Python37-32\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:00.133
+!MESSAGE Key:     idf_python_env_path, idf_python_export_path, virtualenv_python  Value:  get_python_env_path()
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:00.134
+!MESSAGE Updating environment variables with key:    idf_python_env_path, idf_python_export_path, virtualenv_python  value: get_python_env_path()
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:01.788
+!MESSAGE Initializing toolchain...
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:01.789
+!MESSAGE idf_tools.py path: C:\Users\User\Desktop\esp-idf/tools/idf_tools.py
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:01.790
+!MESSAGE [C:\Users\User\Desktop\esp-idf/tools/idf_tools.py, export, --format=key-value]
+
+!ENTRY com.espressif.idf.core 4 0 2020-08-19 14:35:01.793
+!MESSAGE Cannot run program "C:\Users\User\Desktop\esp-idf/tools/idf_tools.py" (in directory "\"): CreateProcess error=193, %1 is not a valid Win32 application
+!STACK 0
+java.io.IOException: Cannot run program "C:\Users\User\Desktop\esp-idf/tools/idf_tools.py" (in directory "\"): CreateProcess error=193, %1 is not a valid Win32 application
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at com.espressif.idf.core.ProcessBuilderFactory.run(ProcessBuilderFactory.java:43)
+	at com.espressif.idf.core.ProcessBuilderFactory.runInBackground(ProcessBuilderFactory.java:49)
+	at com.espressif.idf.core.build.ESPToolChainManager.getIdfToolsExportPath(ESPToolChainManager.java:197)
+	at com.espressif.idf.core.build.ESPToolChainManager.initToolChain(ESPToolChainManager.java:74)
+	at com.espressif.idf.core.build.ESPToolChainProvider.init(ESPToolChainProvider.java:34)
+	at org.eclipse.cdt.internal.core.build.ToolChainManager.lambda$0(ToolChainManager.java:67)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.cdt.internal.core.build.ToolChainManager.init(ToolChainManager.java:64)
+	at org.eclipse.cdt.internal.core.build.ToolChainManager.getProvider(ToolChainManager.java:166)
+	at com.espressif.idf.core.build.ESPToolChainManager.initToolChain(ESPToolChainManager.java:57)
+	at com.espressif.idf.ui.update.InstallToolsHandler.configureToolChain(InstallToolsHandler.java:94)
+	at com.espressif.idf.ui.update.InstallToolsHandler$1.run(InstallToolsHandler.java:75)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=193, %1 is not a valid Win32 application
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:483)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 14 more
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:01.795
+!MESSAGE [F:/Program Files/Java/jdk-13.0.2/bin/server;F:/Program Files/Java/jdk-13.0.2/bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\Program Files (x86)\Python37-32\Scripts\;F:\Program Files (x86)\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;F:\Program Files\MATLAB\R2019a\bin;F:\Program Files\MiKTeX 2.9\miktex\bin\x64\;F:\Program Files\PuTTY\;C:\Users\User\AppData\Local\Microsoft\WindowsApps;;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin;D:\;]
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:02.039
+!MESSAGE Initializing toolchain...
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:02.040
+!MESSAGE idf_tools.py path: C:\Users\User\Desktop\esp-idf/tools/idf_tools.py
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:02.042
+!MESSAGE [C:\Users\User\Desktop\esp-idf/tools/idf_tools.py, export, --format=key-value]
+
+!ENTRY com.espressif.idf.core 4 0 2020-08-19 14:35:02.043
+!MESSAGE Cannot run program "C:\Users\User\Desktop\esp-idf/tools/idf_tools.py" (in directory "\"): CreateProcess error=193, %1 is not a valid Win32 application
+!STACK 0
+java.io.IOException: Cannot run program "C:\Users\User\Desktop\esp-idf/tools/idf_tools.py" (in directory "\"): CreateProcess error=193, %1 is not a valid Win32 application
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at com.espressif.idf.core.ProcessBuilderFactory.run(ProcessBuilderFactory.java:43)
+	at com.espressif.idf.core.ProcessBuilderFactory.runInBackground(ProcessBuilderFactory.java:49)
+	at com.espressif.idf.core.build.ESPToolChainManager.getIdfToolsExportPath(ESPToolChainManager.java:197)
+	at com.espressif.idf.core.build.ESPToolChainManager.initToolChain(ESPToolChainManager.java:74)
+	at com.espressif.idf.core.build.ESPToolChainManager.initToolChain(ESPToolChainManager.java:58)
+	at com.espressif.idf.ui.update.InstallToolsHandler.configureToolChain(InstallToolsHandler.java:94)
+	at com.espressif.idf.ui.update.InstallToolsHandler$1.run(InstallToolsHandler.java:75)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=193, %1 is not a valid Win32 application
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:483)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 9 more
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:02.045
+!MESSAGE [F:/Program Files/Java/jdk-13.0.2/bin/server;F:/Program Files/Java/jdk-13.0.2/bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\Program Files (x86)\Python37-32\Scripts\;F:\Program Files (x86)\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;F:\Program Files\MATLAB\R2019a\bin;F:\Program Files\MiKTeX 2.9\miktex\bin\x64\;F:\Program Files\PuTTY\;C:\Users\User\AppData\Local\Microsoft\WindowsApps;;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin;D:\;]
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:07.624
+!MESSAGE IDF_PATH :C:\Users\User\Desktop\esp-idf
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:07.626
+!MESSAGE No Python installations found in the system.
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:07.626
+!MESSAGE Python Path :null
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2020-08-19 14:35:07.627
+!MESSAGE Command 'com.espressif.idf.ui.command.list' failed
+!STACK 0
+org.eclipse.core.commands.ExecutionException: Paths can't be empty. Please check IDF_PATH and Python
+	at com.espressif.idf.ui.update.ListInstalledToolsHandler.execute(ListInstalledToolsHandler.java:38)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:283)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:97)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:319)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:253)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:173)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:156)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:487)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:213)
+	at org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.executeItem(HandledContributionItem.java:438)
+	at org.eclipse.e4.ui.workbench.renderers.swt.AbstractContributionItem.handleWidgetSelection(AbstractContributionItem.java:449)
+	at org.eclipse.e4.ui.workbench.renderers.swt.AbstractContributionItem.lambda$2(AbstractContributionItem.java:475)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4213)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4030)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3630)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1158)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1047)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:658)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:36.172
+!MESSAGE IDF_PATH :C:\Users\User\Desktop\esp-idf
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:36.174
+!MESSAGE No Python installations found in the system.
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:35:36.175
+!MESSAGE Python Path :null
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2020-08-19 14:35:36.176
+!MESSAGE Command 'com.espressif.idf.ui.command.list' failed
+!STACK 0
+org.eclipse.core.commands.ExecutionException: Paths can't be empty. Please check IDF_PATH and Python
+	at com.espressif.idf.ui.update.ListInstalledToolsHandler.execute(ListInstalledToolsHandler.java:38)
+	at org.eclipse.ui.internal.handlers.HandlerProxy.execute(HandlerProxy.java:283)
+	at org.eclipse.ui.internal.handlers.E4HandlerProxy.execute(E4HandlerProxy.java:97)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:58)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invokeUsingClass(InjectorImpl.java:319)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.invoke(InjectorImpl.java:253)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.invoke(ContextInjectionFactory.java:173)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceHandler.execute(HandlerServiceHandler.java:156)
+	at org.eclipse.core.commands.Command.executeWithChecks(Command.java:488)
+	at org.eclipse.core.commands.ParameterizedCommand.executeWithChecks(ParameterizedCommand.java:487)
+	at org.eclipse.e4.core.commands.internal.HandlerServiceImpl.executeHandler(HandlerServiceImpl.java:213)
+	at org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem.executeItem(HandledContributionItem.java:438)
+	at org.eclipse.e4.ui.workbench.renderers.swt.AbstractContributionItem.handleWidgetSelection(AbstractContributionItem.java:449)
+	at org.eclipse.e4.ui.workbench.renderers.swt.AbstractContributionItem.lambda$2(AbstractContributionItem.java:475)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4213)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1037)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4030)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3630)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1158)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1047)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:155)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:658)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:338)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:557)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:154)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:150)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:137)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:107)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:657)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:594)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1447)
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:36:53.542
+!MESSAGE Command id:com.espressif.idf.ui.command.install
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:36:53.544
+!MESSAGE IDF_PATH :C:\Users\User\Desktop\esp-idf
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:36:53.545
+!MESSAGE GIT path:null
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:36:53.546
+!MESSAGE No Python installations found in the system.
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:01.715
+!MESSAGE Updating environment variables with key:IDF_PATH value:C:\Users\User\Desktop\esp-idf
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:01.716
+!MESSAGE {USERDOMAIN_ROAMINGPROFILE=USER-PC, LOCALAPPDATA=C:\Users\User\AppData\Local, PROCESSOR_LEVEL=23, FP_NO_HOST_CHECK=NO, USERDOMAIN=USER-PC, FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer, LOGONSERVER=\\USER-PC, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\, SystemDrive=C:, BESIEGE_UNITY_ASSEMBLIES=F:/Program Files (x86)/Steam/steamapps/common/Besiege/Besiege_Data\Managed/, OneDrive=C:\Users\User\OneDrive, APPDATA=C:\Users\User\AppData\Roaming, USERNAME=User, ProgramFiles(x86)=C:\Program Files (x86), BESIEGE_GAME_ASSEMBLIES=F:/Program Files (x86)/Steam/steamapps/common/Besiege/Besiege_Data\Managed/, VBOX_MSI_INSTALL_PATH=F:\Program Files\Oracle\VirtualBox\, CommonProgramFiles=C:\Program Files\Common Files, Path=F:/Program Files/Java/jdk-13.0.2/bin/server;F:/Program Files/Java/jdk-13.0.2/bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\Program Files (x86)\Python37-32\Scripts\;F:\Program Files (x86)\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;F:\Program Files\MATLAB\R2019a\bin;F:\Program Files\MiKTeX 2.9\miktex\bin\x64\;F:\Program Files\PuTTY\;C:\Users\User\AppData\Local\Microsoft\WindowsApps;;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin;D:\;, FPS_BROWSER_USER_PROFILE_STRING=Default, PYTHONPATH=C:/SimpleCV1.3/files/opencv/build/python/2.7/;C:/OpenCV2.3/opencv/build/python/2.7/;, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW, DriverData=C:\Windows\System32\Drivers\DriverData, OS=Windows_NT, COMPUTERNAME=USER-PC, PROCESSOR_REVISION=0802, CommonProgramW6432=C:\Program Files\Common Files, ComSpec=C:\WINDOWS\system32\cmd.exe, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\User, SystemRoot=C:\WINDOWS, TEMP=C:\Users\User\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD, USERPROFILE=C:\Users\User, TMP=C:\Users\User\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=12, windir=C:\WINDOWS, =::=::\}
+
+!ENTRY com.espressif.idf.core 4 0 2020-08-19 14:37:01.717
+!MESSAGE Cannot run program "F:\Program Files (x86)\Python37-32\" (in directory "\"): CreateProcess error=5, Access is denied
+!STACK 0
+java.io.IOException: Cannot run program "F:\Program Files (x86)\Python37-32\" (in directory "\"): CreateProcess error=5, Access is denied
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at com.espressif.idf.core.ProcessBuilderFactory.run(ProcessBuilderFactory.java:43)
+	at com.espressif.idf.core.ProcessBuilderFactory.runInBackground(ProcessBuilderFactory.java:49)
+	at com.espressif.idf.ui.update.AbstractToolsHandler.runCommand(AbstractToolsHandler.java:167)
+	at com.espressif.idf.ui.update.InstallToolsHandler.handleToolsInstall(InstallToolsHandler.java:107)
+	at com.espressif.idf.ui.update.InstallToolsHandler$1.run(InstallToolsHandler.java:62)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=5, Access is denied
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:483)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 7 more
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:01.719
+!MESSAGE {USERDOMAIN_ROAMINGPROFILE=USER-PC, LOCALAPPDATA=C:\Users\User\AppData\Local, PROCESSOR_LEVEL=23, FP_NO_HOST_CHECK=NO, USERDOMAIN=USER-PC, FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer, LOGONSERVER=\\USER-PC, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\, SystemDrive=C:, BESIEGE_UNITY_ASSEMBLIES=F:/Program Files (x86)/Steam/steamapps/common/Besiege/Besiege_Data\Managed/, OneDrive=C:\Users\User\OneDrive, APPDATA=C:\Users\User\AppData\Roaming, USERNAME=User, ProgramFiles(x86)=C:\Program Files (x86), BESIEGE_GAME_ASSEMBLIES=F:/Program Files (x86)/Steam/steamapps/common/Besiege/Besiege_Data\Managed/, VBOX_MSI_INSTALL_PATH=F:\Program Files\Oracle\VirtualBox\, CommonProgramFiles=C:\Program Files\Common Files, Path=F:/Program Files/Java/jdk-13.0.2/bin/server;F:/Program Files/Java/jdk-13.0.2/bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\Program Files (x86)\Python37-32\Scripts\;F:\Program Files (x86)\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;F:\Program Files\MATLAB\R2019a\bin;F:\Program Files\MiKTeX 2.9\miktex\bin\x64\;F:\Program Files\PuTTY\;C:\Users\User\AppData\Local\Microsoft\WindowsApps;;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin;D:\;, FPS_BROWSER_USER_PROFILE_STRING=Default, PYTHONPATH=C:/SimpleCV1.3/files/opencv/build/python/2.7/;C:/OpenCV2.3/opencv/build/python/2.7/;, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW, DriverData=C:\Windows\System32\Drivers\DriverData, OS=Windows_NT, COMPUTERNAME=USER-PC, PROCESSOR_REVISION=0802, CommonProgramW6432=C:\Program Files\Common Files, ComSpec=C:\WINDOWS\system32\cmd.exe, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\User, SystemRoot=C:\WINDOWS, TEMP=C:\Users\User\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD, USERPROFILE=C:\Users\User, TMP=C:\Users\User\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=12, windir=C:\WINDOWS, =::=::\}
+
+!ENTRY com.espressif.idf.core 4 0 2020-08-19 14:37:01.721
+!MESSAGE Cannot run program "F:\Program Files (x86)\Python37-32\" (in directory "\"): CreateProcess error=5, Access is denied
+!STACK 0
+java.io.IOException: Cannot run program "F:\Program Files (x86)\Python37-32\" (in directory "\"): CreateProcess error=5, Access is denied
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at com.espressif.idf.core.ProcessBuilderFactory.run(ProcessBuilderFactory.java:43)
+	at com.espressif.idf.core.ProcessBuilderFactory.runInBackground(ProcessBuilderFactory.java:49)
+	at com.espressif.idf.ui.update.AbstractToolsHandler.runCommand(AbstractToolsHandler.java:167)
+	at com.espressif.idf.ui.update.InstallToolsHandler.handleToolsInstallPython(InstallToolsHandler.java:117)
+	at com.espressif.idf.ui.update.InstallToolsHandler$1.run(InstallToolsHandler.java:66)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=5, Access is denied
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:483)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 7 more
+
+!ENTRY com.espressif.idf.core 4 0 2020-08-19 14:37:01.722
+!MESSAGE Cannot run program "F:\Program Files (x86)\Python37-32\" (in directory "\"): CreateProcess error=5, Access is denied
+!STACK 0
+java.io.IOException: Cannot run program "F:\Program Files (x86)\Python37-32\" (in directory "\"): CreateProcess error=5, Access is denied
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at com.espressif.idf.core.ProcessBuilderFactory.run(ProcessBuilderFactory.java:43)
+	at com.espressif.idf.core.ProcessBuilderFactory.runInBackground(ProcessBuilderFactory.java:49)
+	at com.espressif.idf.ui.update.InstallToolsHandler.handleToolsExport(InstallToolsHandler.java:134)
+	at com.espressif.idf.ui.update.InstallToolsHandler$1.run(InstallToolsHandler.java:70)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=5, Access is denied
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:483)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 6 more
+
+!ENTRY org.eclipse.core.jobs 4 2 2020-08-19 14:37:01.724
+!MESSAGE An internal error occurred during: "Installing tools...".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.runtime.PlatformLogWriter.getLog(PlatformLogWriter.java:67)
+	at org.eclipse.core.internal.runtime.Log.log(Log.java:68)
+	at com.espressif.idf.core.logging.Logger.log(Logger.java:91)
+	at com.espressif.idf.ui.update.InstallToolsHandler.handleToolsExport(InstallToolsHandler.java:141)
+	at com.espressif.idf.ui.update.InstallToolsHandler$1.run(InstallToolsHandler.java:70)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:07.214
+!MESSAGE Command id:com.espressif.idf.ui.command.install
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:07.215
+!MESSAGE IDF_PATH :C:\Users\User\Desktop\esp-idf
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:07.216
+!MESSAGE GIT path:null
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:07.217
+!MESSAGE No Python installations found in the system.
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:40.213
+!MESSAGE Updating environment variables with key:IDF_PATH value:C:\Users\User\Desktop\esp-idf
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:40.214
+!MESSAGE {USERDOMAIN_ROAMINGPROFILE=USER-PC, LOCALAPPDATA=C:\Users\User\AppData\Local, PROCESSOR_LEVEL=23, FP_NO_HOST_CHECK=NO, USERDOMAIN=USER-PC, FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer, LOGONSERVER=\\USER-PC, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\, SystemDrive=C:, BESIEGE_UNITY_ASSEMBLIES=F:/Program Files (x86)/Steam/steamapps/common/Besiege/Besiege_Data\Managed/, OneDrive=C:\Users\User\OneDrive, APPDATA=C:\Users\User\AppData\Roaming, USERNAME=User, ProgramFiles(x86)=C:\Program Files (x86), BESIEGE_GAME_ASSEMBLIES=F:/Program Files (x86)/Steam/steamapps/common/Besiege/Besiege_Data\Managed/, VBOX_MSI_INSTALL_PATH=F:\Program Files\Oracle\VirtualBox\, CommonProgramFiles=C:\Program Files\Common Files, Path=F:/Program Files/Java/jdk-13.0.2/bin/server;F:/Program Files/Java/jdk-13.0.2/bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\Program Files (x86)\Python37-32\Scripts\;F:\Program Files (x86)\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;F:\Program Files\MATLAB\R2019a\bin;F:\Program Files\MiKTeX 2.9\miktex\bin\x64\;F:\Program Files\PuTTY\;C:\Users\User\AppData\Local\Microsoft\WindowsApps;;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin;D:\;, FPS_BROWSER_USER_PROFILE_STRING=Default, PYTHONPATH=C:/SimpleCV1.3/files/opencv/build/python/2.7/;C:/OpenCV2.3/opencv/build/python/2.7/;, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW, DriverData=C:\Windows\System32\Drivers\DriverData, OS=Windows_NT, COMPUTERNAME=USER-PC, PROCESSOR_REVISION=0802, CommonProgramW6432=C:\Program Files\Common Files, ComSpec=C:\WINDOWS\system32\cmd.exe, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\User, SystemRoot=C:\WINDOWS, TEMP=C:\Users\User\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD, USERPROFILE=C:\Users\User, TMP=C:\Users\User\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=12, windir=C:\WINDOWS, =::=::\}
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:40.632
+!MESSAGE {USERDOMAIN_ROAMINGPROFILE=USER-PC, LOCALAPPDATA=C:\Users\User\AppData\Local, PROCESSOR_LEVEL=23, FP_NO_HOST_CHECK=NO, USERDOMAIN=USER-PC, FPS_BROWSER_APP_PROFILE_STRING=Internet Explorer, LOGONSERVER=\\USER-PC, SESSIONNAME=Console, ALLUSERSPROFILE=C:\ProgramData, PROCESSOR_ARCHITECTURE=AMD64, PSModulePath=C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\, SystemDrive=C:, BESIEGE_UNITY_ASSEMBLIES=F:/Program Files (x86)/Steam/steamapps/common/Besiege/Besiege_Data\Managed/, OneDrive=C:\Users\User\OneDrive, APPDATA=C:\Users\User\AppData\Roaming, USERNAME=User, ProgramFiles(x86)=C:\Program Files (x86), BESIEGE_GAME_ASSEMBLIES=F:/Program Files (x86)/Steam/steamapps/common/Besiege/Besiege_Data\Managed/, VBOX_MSI_INSTALL_PATH=F:\Program Files\Oracle\VirtualBox\, CommonProgramFiles=C:\Program Files\Common Files, Path=F:/Program Files/Java/jdk-13.0.2/bin/server;F:/Program Files/Java/jdk-13.0.2/bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\Program Files (x86)\Python37-32\Scripts\;F:\Program Files (x86)\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;F:\Program Files\MATLAB\R2019a\bin;F:\Program Files\MiKTeX 2.9\miktex\bin\x64\;F:\Program Files\PuTTY\;C:\Users\User\AppData\Local\Microsoft\WindowsApps;;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin;D:\;, FPS_BROWSER_USER_PROFILE_STRING=Default, PYTHONPATH=C:/SimpleCV1.3/files/opencv/build/python/2.7/;C:/OpenCV2.3/opencv/build/python/2.7/;, PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW, DriverData=C:\Windows\System32\Drivers\DriverData, OS=Windows_NT, COMPUTERNAME=USER-PC, PROCESSOR_REVISION=0802, CommonProgramW6432=C:\Program Files\Common Files, ComSpec=C:\WINDOWS\system32\cmd.exe, ProgramData=C:\ProgramData, ProgramW6432=C:\Program Files, HOMEPATH=\Users\User, SystemRoot=C:\WINDOWS, TEMP=C:\Users\User\AppData\Local\Temp, HOMEDRIVE=C:, PROCESSOR_IDENTIFIER=AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD, USERPROFILE=C:\Users\User, TMP=C:\Users\User\AppData\Local\Temp, CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files, ProgramFiles=C:\Program Files, PUBLIC=C:\Users\Public, NUMBER_OF_PROCESSORS=12, windir=C:\WINDOWS, =::=::\}
+
+!ENTRY com.espressif.idf.core 4 1 2020-08-19 14:37:41.150
+!MESSAGE Traceback (most recent call last):
+  File "C:\Users\User\Desktop\esp-idf\tools\idf_tools.py", line 1387, in <module>
+    main(sys.argv[1:])
+  File "C:\Users\User\Desktop\esp-idf\tools\idf_tools.py", line 1383, in main
+    action_func(args)
+  File "C:\Users\User\Desktop\esp-idf\tools\idf_tools.py", line 1008, in action_export
+    idf_python_env_path, idf_python_export_path, virtualenv_python = get_python_env_path()
+  File "C:\Users\User\Desktop\esp-idf\tools\idf_tools.py", line 847, in get_python_env_path
+    cwd=global_idf_path, env=os.environ).decode()
+  File "F:\Program Files (x86)\Python37-32\lib\subprocess.py", line 395, in check_output
+    **kwargs).stdout
+  File "F:\Program Files (x86)\Python37-32\lib\subprocess.py", line 472, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "F:\Program Files (x86)\Python37-32\lib\subprocess.py", line 775, in __init__
+    restore_signals, start_new_session)
+  File "F:\Program Files (x86)\Python37-32\lib\subprocess.py", line 1178, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:41.151
+!MESSAGE Key:     idf_python_env_path, idf_python_export_path, virtualenv_python  Value:  get_python_env_path()
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:41.153
+!MESSAGE Initializing toolchain...
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:41.154
+!MESSAGE idf_tools.py path: C:\Users\User\Desktop\esp-idf/tools/idf_tools.py
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:41.155
+!MESSAGE [C:\Users\User\Desktop\esp-idf/tools/idf_tools.py, export, --format=key-value]
+
+!ENTRY com.espressif.idf.core 4 0 2020-08-19 14:37:41.157
+!MESSAGE Cannot run program "C:\Users\User\Desktop\esp-idf/tools/idf_tools.py" (in directory "\"): CreateProcess error=193, %1 is not a valid Win32 application
+!STACK 0
+java.io.IOException: Cannot run program "C:\Users\User\Desktop\esp-idf/tools/idf_tools.py" (in directory "\"): CreateProcess error=193, %1 is not a valid Win32 application
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1128)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1071)
+	at com.espressif.idf.core.ProcessBuilderFactory.run(ProcessBuilderFactory.java:43)
+	at com.espressif.idf.core.ProcessBuilderFactory.runInBackground(ProcessBuilderFactory.java:49)
+	at com.espressif.idf.core.build.ESPToolChainManager.getIdfToolsExportPath(ESPToolChainManager.java:197)
+	at com.espressif.idf.core.build.ESPToolChainManager.initToolChain(ESPToolChainManager.java:74)
+	at com.espressif.idf.core.build.ESPToolChainManager.initToolChain(ESPToolChainManager.java:58)
+	at com.espressif.idf.ui.update.InstallToolsHandler.configureToolChain(InstallToolsHandler.java:94)
+	at com.espressif.idf.ui.update.InstallToolsHandler$1.run(InstallToolsHandler.java:75)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: CreateProcess error=193, %1 is not a valid Win32 application
+	at java.base/java.lang.ProcessImpl.create(Native Method)
+	at java.base/java.lang.ProcessImpl.<init>(ProcessImpl.java:483)
+	at java.base/java.lang.ProcessImpl.start(ProcessImpl.java:158)
+	at java.base/java.lang.ProcessBuilder.start(ProcessBuilder.java:1107)
+	... 9 more
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:37:41.158
+!MESSAGE [F:/Program Files/Java/jdk-13.0.2/bin/server;F:/Program Files/Java/jdk-13.0.2/bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;F:\Program Files (x86)\Python37-32\Scripts\;F:\Program Files (x86)\Python37-32\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;F:\Program Files\MATLAB\R2019a\bin;F:\Program Files\MiKTeX 2.9\miktex\bin\x64\;F:\Program Files\PuTTY\;C:\Users\User\AppData\Local\Microsoft\WindowsApps;;C:\Users\User\AppData\Local\Programs\Microsoft VS Code\bin;D:\;]
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:38:22.457
+!MESSAGE IDF path C:\Users\User\Desktop\esp-idf
+
+!ENTRY com.espressif.idf.core 1 0 2020-08-19 14:38:22.480
+!MESSAGE IDF path C:\Users\User\Desktop\esp-idf

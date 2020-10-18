@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+F:/SWDev/BrewController_Software/build/CMakeFiles/bootloader
+F:/SWDev/BrewController_Software/build/CMakeFiles/bootloader.rule
+F:/SWDev/BrewController_Software/build/CMakeFiles/bootloader-complete.rule
+F:/SWDev/BrewController_Software/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+F:/SWDev/BrewController_Software/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+F:/SWDev/BrewController_Software/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+F:/SWDev/BrewController_Software/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+F:/SWDev/BrewController_Software/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+F:/SWDev/BrewController_Software/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+F:/SWDev/BrewController_Software/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule

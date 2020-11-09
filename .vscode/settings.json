@@ -16,6 +16,7 @@
     "esp_wifi.h": "c",
     "gpio.h": "c",
     "nvs_flash.h": "c",
-    "esp_event.h": "c"
+    "esp_event.h": "c",
+    "nvs.h": "c"
   },
 }

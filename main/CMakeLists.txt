@@ -1,4 +1,6 @@
-idf_component_register(SRCS "main.c" 
+idf_component_register(SRCS "cJSON.c" 
+                            "http.c" 
+                            "main.c" 
                             "owb_gpio.c" 
                             "owb.c" 
                             "owb_rmt.c" 

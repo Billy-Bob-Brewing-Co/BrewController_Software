@@ -2,6 +2,29 @@
     "version": "2.0.0",
     "tasks": [
         {
+          "label": "OpenOCD",
+          "type": "shell",
+          "isBackground": true,
+          "command": "C:\\Users\\rob_c\\.espressif\\tools\\openocd-esp32\\v0.10.0-esp32-20190313\\openocd-esp32\\bin\\openocd.exe -f interface/ftdi/esp32_devkitj_v1.cfg -f board/esp-wroom-32.cfg",
+          "problemMatcher": [
+            {
+              "pattern": [
+                {
+                  "regexp": ".",
+                  "file": 1,
+                  "location": 2,
+                  "message": 3
+                }
+              ],
+              "background": {
+                "activeOnStart": true,
+                "beginsPattern": ".",
+                "endsPattern": ".",
+              }
+            }
+          ]
+        },
+        {
             "label": "Build - Build project",
             "type": "shell",
             "command": "${config:idf.pythonBinPath} ${config:idf.espIdfPath}/tools/idf.py build",

@@ -8,5 +8,15 @@
     "editor.quickSuggestions": true
   },
   "C_Cpp.intelliSenseEngineFallback": "Enabled",
-  "idf.portWin": "COM9"
+  "idf.portWin": "COM9",
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "freertos.h": "c",
+    "task.h": "c",
+    "esp_wifi.h": "c",
+    "gpio.h": "c",
+    "nvs_flash.h": "c",
+    "esp_event.h": "c",
+    "nvs.h": "c"
+  },
 }

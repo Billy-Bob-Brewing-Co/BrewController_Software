@@ -21,6 +21,7 @@
 #include "ds18b20.h"
 #include "comms.h"
 #include "config.h"
+#include "brew.h"
 
 #define GPIO_DS18B20_AMB 26
 #define GPIO_DS18B20_BEER 27
@@ -171,6 +172,8 @@ void app_main()
 {
   //Initialize NVS (needed for wifi)
   initNvs();
+
+  brew_init();
 
   TCommsSetup commsSetup;
   commsSetup.wifiSsid = wifiSsid;

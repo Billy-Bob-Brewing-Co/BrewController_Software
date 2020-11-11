@@ -1,4 +1,4 @@
-idf_component_register(SRCS "mqtt.c" 
+idf_component_register(SRCS "brew.c" "mqtt.c" 
                             "cJSON.c" 
                             "http.c" 
                             "main.c" 

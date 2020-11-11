@@ -31,7 +31,7 @@ static const char *TAG = "HTTP_CLIENT";
 
 static SemaphoreHandle_t _xResponse;
 
-#define WEB_SERVER "robertcarey.net"
+#define WEB_SERVER "10.1.5.39"
 #define WEB_PORT "3500"
 #define WEB_PATH "/"
 

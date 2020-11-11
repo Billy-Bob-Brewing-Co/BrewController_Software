@@ -87,7 +87,7 @@ void mqtt_init(const char *jwt, const char *userId, const char *deviceId, const 
   Jwt = jwt;
 
   esp_mqtt_client_config_t mqtt_cnfg = {
-      .uri = "mqtt://robertcarey.net",
+      .uri = "mqtt://10.1.5.39",
       .port = 8883,
       .username = email,
       .password = jwt,

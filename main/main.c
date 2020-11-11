@@ -86,7 +86,7 @@ static esp_err_t initNvs(void)
   // printf("btn lvl: %d\n", gpio_get_level(GPIO_BTN_RST));
   // if (gpio_get_level(GPIO_BTN_RST))
   // {
-  nvs_flash_erase();
+  // nvs_flash_erase();
   //   gpio_set_level(GPIO_LED_STS, true);
   // }
   err = nvs_flash_init();

@@ -33,7 +33,7 @@ typedef struct
   int brewing;
   int error;
   uint32_t setpoint;
-  uint32_t sensors[3];
+  float sensors[3];
 } brewStatus_t;
 
 void brew_init(void);

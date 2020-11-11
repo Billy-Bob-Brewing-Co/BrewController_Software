@@ -29,16 +29,25 @@
 
 static void vBrewTask(void *pvParameters);
 
-float temp_setpoint = 20.0;
 const float temp_hysteresis = 0.5;
-float ambTempVal = 20.0;
-float beerTempVal = 20.0;
+
+brewStatus_t Brew_Status;
+
+// Assigned to pointers for readbility
+float *beerTemp = &Brew_Status.sensors[0];
+float *ambTemp = &Brew_Status.sensors[1];
+float *setTemp = &Brew_Status.sensors[2];
 
 /* Event source task related definitions */
 ESP_EVENT_DEFINE_BASE(BREW_EVENTS);
 
 void brew_init(void)
 {
+  // Assign Default vals
+  *beerTemp = 20.0;
+  *ambTemp = 20.0;
+  *setTemp = 20.0;
+
   esp_event_loop_args_t brew_task_args = {
       .queue_size = 5,
       .task_name = "brew_task", // task will be created
@@ -50,9 +59,10 @@ void brew_init(void)
   ESP_ERROR_CHECK(esp_event_loop_create(&brew_task_args, &BREW_TASK));
 
   xTaskCreate(&vBrewTask, "Brew_task_main", 4096, NULL, 5, NULL);
+  xTaskCreate(&vStatusTask, "Brew_status_task", 1024, NULL, 4, NULL);
 }
 
-void vBrewTask(void *pvParameters)
+static void vBrewTask(void *pvParameters)
 {
   OneWireBus *AmbTemp;
   OneWireBus *BeerTemp;
@@ -94,30 +104,30 @@ void vBrewTask(void *pvParameters)
     printf("Ambient Temp: %f\n", ambTempVal);
     printf("Beer Temp: %f\n", beerTempVal);
 
-    if (ambTempVal > temp_setpoint)
+    if (*ambTemp > *setTemp)
     {
       // Beer may need cooling
       // If beer is warmer than setpoint by hysteresis value and fridge is off, turn fridge on
-      if ((beerTempVal > (temp_setpoint + temp_hysteresis)) && !gpio_get_level(FRIDGEGPIO))
+      if ((*beerTemp > (*setTemp + temp_hysteresis)) && !gpio_get_level(FRIDGEGPIO))
       {
         gpio_set_level(FRIDGEGPIO, 1);
       }
       // Otherwise, if beer is colder than setpoint by hysteresis value and fridge is on, turn fridge off
-      else if ((beerTempVal < (temp_setpoint - temp_hysteresis)) && gpio_get_level(FRIDGEGPIO))
+      else if ((*beerTemp < (*setTemp - temp_hysteresis)) && gpio_get_level(FRIDGEGPIO))
       {
         gpio_set_level(FRIDGEGPIO, 0);
       }
     }
-    if (ambTempVal < temp_setpoint)
+    if (*ambTemp < *setTemp)
     {
       // Beer may need heating
       // If beer is warmer than setpoint by hysteresis value and heater is on, turn heater off
-      if ((beerTempVal > (temp_setpoint + temp_hysteresis)) && gpio_get_level(FRIDGEGPIO))
+      if ((*beerTemp > (*setTemp + temp_hysteresis)) && gpio_get_level(FRIDGEGPIO))
       {
         gpio_set_level(FRIDGEGPIO, 0);
       }
       // Otherwise, if beer is colder than setpoint by hysteresis value and heater is off, turn heater on
-      else if ((beerTempVal < (temp_setpoint - temp_hysteresis)) && !gpio_get_level(FRIDGEGPIO))
+      else if ((*beerTemp < (*setTemp - temp_hysteresis)) && !gpio_get_level(FRIDGEGPIO))
       {
         gpio_set_level(FRIDGEGPIO, 1);
       }

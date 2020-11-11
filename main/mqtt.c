@@ -78,7 +78,40 @@ static esp_err_t mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
 static void _statusEventHandler(void *handler_args, esp_event_base_t base, int32_t id, void *event_data)
 {
   brewStatus_t *Brew_Status = (brewStatus_t *)event_data;
-  printf("Data %f\n", Brew_Status->sensors[0]);
+  char topic[100];
+  cJSON *payload = cJSON_CreateObject();
+  cJSON_AddStringToObject(payload, "jwt", Jwt);
+
+  _mkTopic("status", topic);
+
+  cJSON *data = cJSON_CreateObject();
+  cJSON_AddNumberToObject(data, "brewing", Brew_Status->brewing);
+  cJSON_AddNumberToObject(data, "error", Brew_Status->error);
+  cJSON_AddNumberToObject(data, "setpoint", Brew_Status->sensors[2]);
+
+  cJSON *sensors = cJSON_CreateArray();
+  // Fridge Temp
+  cJSON *fridge = cJSON_CreateObject();
+  cJSON_AddNumberToObject(fridge, "data", Brew_Status->sensors[0]);
+  cJSON_AddItemToArray(sensors, fridge);
+  // Beer Temp
+  cJSON *beer = cJSON_CreateObject();
+  cJSON_AddNumberToObject(beer, "data", Brew_Status->sensors[1]);
+  cJSON_AddItemToArray(sensors, beer);
+  // Setpoint Target
+  cJSON *setpoint = cJSON_CreateObject();
+  cJSON_AddNumberToObject(setpoint, "data", Brew_Status->sensors[2]);
+  cJSON_AddItemToArray(sensors, setpoint);
+
+  // Add sensor arrat to object
+  cJSON_AddItemToObject(data, "sensors", sensors);
+
+  cJSON_AddItemToObject(payload, "data", data);
+
+  printf("DATA: %s\n", cJSON_Print(payload));
+  esp_mqtt_client_publish(Client, topic, cJSON_Print(payload), 0, 1, 0);
+
+  cJSON_Delete(payload); // Deletes the array and its contents
 }
 
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data)

@@ -99,10 +99,10 @@ static void vBrewTask(void *pvParameters)
   gpio_set_direction(YELLOW_LED_GPIO, GPIO_MODE_OUTPUT);
   while (1)
   {
-    ds18b20_convert_and_read_temp(device_amb, &ambTempVal);
-    ds18b20_convert_and_read_temp(device_beer, &beerTempVal);
-    printf("Ambient Temp: %f\n", ambTempVal);
-    printf("Beer Temp: %f\n", beerTempVal);
+    ds18b20_convert_and_read_temp(device_amb, ambTemp);
+    ds18b20_convert_and_read_temp(device_beer, beerTemp);
+    printf("Ambient Temp: %f\n", *ambTemp);
+    printf("Beer Temp: %f\n", *beerTemp);
 
     if (*ambTemp > *setTemp)
     {

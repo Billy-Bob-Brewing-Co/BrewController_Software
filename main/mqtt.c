@@ -85,23 +85,26 @@ static void _statusEventHandler(void *handler_args, esp_event_base_t base, int32
   _mkTopic("status", topic);
 
   cJSON *data = cJSON_CreateObject();
-  cJSON_AddNumberToObject(data, "brewing", Brew_Status->brewing);
-  cJSON_AddNumberToObject(data, "error", Brew_Status->error);
-  cJSON_AddNumberToObject(data, "setpoint", Brew_Status->sensors[2]);
+
+  cJSON *status = cJSON_CreateObject();
+  cJSON_AddNumberToObject(status, "brewing", Brew_Status->brewing);
+  cJSON_AddNumberToObject(status, "error", Brew_Status->error);
+  cJSON_AddNumberToObject(status, "setpoint", Brew_Status->sensors[2]);
+  cJSON_AddItemToObject(data, "status", status);
 
   cJSON *sensors = cJSON_CreateArray();
   // Fridge Temp
   cJSON *fridge = cJSON_CreateObject();
   cJSON_AddNumberToObject(fridge, "data", Brew_Status->sensors[0]);
   cJSON_AddItemToArray(sensors, fridge);
-  // Beer Temp
-  cJSON *beer = cJSON_CreateObject();
-  cJSON_AddNumberToObject(beer, "data", Brew_Status->sensors[1]);
-  cJSON_AddItemToArray(sensors, beer);
-  // Setpoint Target
-  cJSON *setpoint = cJSON_CreateObject();
-  cJSON_AddNumberToObject(setpoint, "data", Brew_Status->sensors[2]);
-  cJSON_AddItemToArray(sensors, setpoint);
+  // // Beer Temp
+  // cJSON *beer = cJSON_CreateObject();
+  // cJSON_AddNumberToObject(beer, "data", Brew_Status->sensors[1]);
+  // cJSON_AddItemToArray(sensors, beer);
+  // // Setpoint Target
+  // cJSON *setpoint = cJSON_CreateObject();
+  // cJSON_AddNumberToObject(setpoint, "data", Brew_Status->sensors[2]);
+  // cJSON_AddItemToArray(sensors, setpoint);
 
   // Add sensor arrat to object
   cJSON_AddItemToObject(data, "sensors", sensors);

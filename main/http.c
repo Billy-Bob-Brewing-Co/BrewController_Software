@@ -202,14 +202,14 @@ esp_err_t http_reg_device(const char *jwt, char **deviceId)
   cJSON *fridge = cJSON_CreateObject();
   cJSON_AddStringToObject(fridge, "name", "Fridge Temp");
   cJSON_AddItemToArray(sensors, fridge);
-  // Beer Temp
-  cJSON *beer = cJSON_CreateObject();
-  cJSON_AddStringToObject(beer, "name", "Beer Temp");
-  cJSON_AddItemToArray(sensors, beer);
-  // Setpoint Target
-  cJSON *setpoint = cJSON_CreateObject();
-  cJSON_AddStringToObject(setpoint, "name", "Setpoint Target");
-  cJSON_AddItemToArray(sensors, setpoint);
+  // // Beer Temp
+  // cJSON *beer = cJSON_CreateObject();
+  // cJSON_AddStringToObject(beer, "name", "Beer Temp");
+  // cJSON_AddItemToArray(sensors, beer);
+  // // Setpoint Target
+  // cJSON *setpoint = cJSON_CreateObject();
+  // cJSON_AddStringToObject(setpoint, "name", "Setpoint Target");
+  // cJSON_AddItemToArray(sensors, setpoint);
 
   // Add sensor arrat to object
   cJSON_AddItemToObject(post_data, "sensors", sensors);

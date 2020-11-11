@@ -15,6 +15,7 @@
 
 #include "mqtt.h"
 #include "cJSON.h"
+#include "brew.h"
 
 static const char *TAG = "MQTT";
 
@@ -74,6 +75,12 @@ static esp_err_t mqtt_event_handler_cb(esp_mqtt_event_handle_t event)
   return ESP_OK;
 }
 
+static void _statusEventHandler(void *handler_args, esp_event_base_t base, int32_t id, void *event_data)
+{
+  brewStatus_t *Brew_Status = (brewStatus_t *)event_data;
+  printf("Data %f\n", Brew_Status->sensors[0]);
+}
+
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data)
 {
   ESP_LOGD(TAG, "Event dispatched from event loop base=%s, event_id=%d", base, event_id);
@@ -96,4 +103,5 @@ void mqtt_init(const char *jwt, const char *userId, const char *deviceId, const 
   Client = esp_mqtt_client_init(&mqtt_cnfg);
   esp_mqtt_client_register_event(Client, ESP_EVENT_ANY_ID, mqtt_event_handler, Client);
   esp_mqtt_client_start(Client);
+  ESP_ERROR_CHECK(esp_event_handler_register_with(BREW_TASK, BREW_EVENTS, BREW_STATUS_EVENT, _statusEventHandler, NULL));
 }

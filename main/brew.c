@@ -28,6 +28,7 @@
 #define YELLOW_LED_GPIO 22
 
 static void vBrewTask(void *pvParameters);
+static void vStatusTask(void *pvParameters);
 
 const float temp_hysteresis = 0.5;
 
@@ -134,5 +135,23 @@ static void vBrewTask(void *pvParameters)
     }
 
     vTaskDelay(2000 / portTICK_PERIOD_MS);
+  }
+}
+
+void _updateStatus()
+{
+  ESP_ERROR_CHECK(esp_event_post_to(BREW_TASK, BREW_EVENTS, BREW_STATUS_EVENT, &Brew_Status, sizeof(Brew_Status), portMAX_DELAY));
+}
+
+// trigger status event so that MQTT message is sent
+static void vStatusTask(void *pvParameters)
+{
+  // Inital delay of 10 sec to allow for the device to configure and connect
+  vTaskDelay(10000 / portTICK_PERIOD_MS);
+  while (1)
+  {
+    _updateStatus();
+    // approx 1 min delay
+    vTaskDelay(60000 / portTICK_PERIOD_MS);
   }
 }

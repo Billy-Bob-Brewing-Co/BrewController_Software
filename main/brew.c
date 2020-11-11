@@ -48,6 +48,8 @@ void brew_init(void)
   *beerTemp = 20.0;
   *ambTemp = 20.0;
   *setTemp = 20.0;
+  Brew_Status.brewing = 1;
+  Brew_Status.error = 0;
 
   esp_event_loop_args_t brew_task_args = {
       .queue_size = 5,

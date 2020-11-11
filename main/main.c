@@ -41,6 +41,11 @@ esp_err_t err;
 
 static const char *TAG = "MAIN";
 
+float temp_setpoint = 20.0;
+const float temp_hysteresis = 0.5;
+float ambTempVal = 20.0;
+float beerTempVal = 20.0;
+
 static void nvsString(nvs_handle_t handle, char *key, char **val)
 {
   size_t reqSize;
@@ -194,16 +199,6 @@ void app_main()
   BeerTemp = owb_rmt_initialize(&rmt_driver_info_beer, GPIO_DS18B20_BEER, RMT_CHANNEL_3, RMT_CHANNEL_4);
   owb_use_crc(AmbTemp, true);
   owb_use_crc(BeerTemp, true);
-  OneWireBus_SearchState search_state_amb = {0};
-  OneWireBus_SearchState search_state_beer = {0};
-  bool found_amb = false;
-  bool found_beer = false;
-  owb_search_first(AmbTemp, &search_state_amb, &found_amb);
-  owb_search_first(BeerTemp, &search_state_beer, &found_beer);
-  char rom_code_s_amb[17];
-  char rom_code_s_beer[17];
-  owb_string_from_rom_code(search_state_amb.rom_code, rom_code_s_amb, sizeof(rom_code_s_amb));
-  owb_string_from_rom_code(search_state_beer.rom_code, rom_code_s_beer, sizeof(rom_code_s_beer));
   DS18B20_Info *device_amb = 0;
   DS18B20_Info *device_beer = 0;
 
@@ -231,34 +226,38 @@ void app_main()
   gpio_set_direction(YELLOW_LED_GPIO, GPIO_MODE_OUTPUT);
   while (1)
   {
-    printf("Turning on the fridge\n");
-    gpio_set_level(FRIDGEGPIO, 1);
-    vTaskDelay(2000 / portTICK_PERIOD_MS);
-    printf("Turning off the fridge\n");
-    gpio_set_level(FRIDGEGPIO, 0);
-    vTaskDelay(2000 / portTICK_PERIOD_MS);
-    printf("Turning on the heatpad\n");
-    gpio_set_level(HEATPADGPIO, 1);
-    vTaskDelay(2000 / portTICK_PERIOD_MS);
-    printf("Turning off the heatpad\n");
-    gpio_set_level(HEATPADGPIO, 0);
-    vTaskDelay(2000 / portTICK_PERIOD_MS);
-    printf("Turning on red LED\n");
-    gpio_set_level(RED_LED_GPIO, 1);
-    vTaskDelay(2000 / portTICK_PERIOD_MS);
-    printf("Turning off red LED\n");
-    gpio_set_level(RED_LED_GPIO, 0);
-    vTaskDelay(2000 / portTICK_PERIOD_MS);
-    printf("Turning on yellow LED\n");
-    gpio_set_level(YELLOW_LED_GPIO, 1);
-    vTaskDelay(2000 / portTICK_PERIOD_MS);
-    printf("Turning off yellow LED\n");
-    gpio_set_level(YELLOW_LED_GPIO, 0);
-    vTaskDelay(2000 / portTICK_PERIOD_MS);
-    float ambTempVal, beerTempVal;
     ds18b20_convert_and_read_temp(device_amb, &ambTempVal);
     ds18b20_convert_and_read_temp(device_beer, &beerTempVal);
     printf("Ambient Temp: %f\n", ambTempVal);
     printf("Beer Temp: %f\n", beerTempVal);
+
+    if (ambTempVal > temp_setpoint)
+    {
+      // Beer may need cooling
+      // If beer is warmer than setpoint by hysteresis value and fridge is off, turn fridge on
+      if ((beerTempVal > (temp_setpoint + temp_hysteresis)) && !gpio_get_level(FRIDGEGPIO))
+      {
+        gpio_set_level(FRIDGEGPIO, 1);
+      }
+      // Otherwise, if beer is colder than setpoint by hysteresis value and fridge is on, turn fridge off
+      else if ((beerTempVal < (temp_setpoint - temp_hysteresis)) && gpio_get_level(FRIDGEGPIO))
+      {
+        gpio_set_level(FRIDGEGPIO, 0);
+      }
+    }
+    if (ambTempVal < temp_setpoint)
+    {
+      // Beer may need heating
+      // If beer is warmer than setpoint by hysteresis value and heater is on, turn heater off
+      if ((beerTempVal > (temp_setpoint + temp_hysteresis)) && gpio_get_level(FRIDGEGPIO))
+      {
+        gpio_set_level(FRIDGEGPIO, 0);
+      }
+      // Otherwise, if beer is colder than setpoint by hysteresis value and heater is off, turn heater on
+      else if ((beerTempVal < (temp_setpoint - temp_hysteresis)) && !gpio_get_level(FRIDGEGPIO))
+      {
+        gpio_set_level(FRIDGEGPIO, 1);
+      }
+    }
   }
 }

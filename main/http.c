@@ -31,7 +31,7 @@ static const char *TAG = "HTTP_CLIENT";
 
 static SemaphoreHandle_t _xResponse;
 
-#define WEB_SERVER "robertcarey.net"
+#define WEB_SERVER "10.1.5.39"
 #define WEB_PORT "3500"
 #define WEB_PATH "/"
 
@@ -174,21 +174,45 @@ esp_err_t http_reg_device(const char *jwt, char **deviceId)
 
   esp_http_client_handle_t client = esp_http_client_init(&config);
 
+  // Object to register device
   cJSON *post_data = cJSON_CreateObject();
+
+  // Type
   cJSON_AddStringToObject(post_data, "type", "BrewController");
   char id[15];
   uint8_t mac[6];
   esp_read_mac(mac, ESP_MAC_WIFI_STA);
 
+  // Name
   sprintf(id, "%s_%02x%02X%02X", "BC", mac[3], mac[4], mac[5]);
   cJSON_AddStringToObject(post_data, "name", id);
 
+  // Client Id
   sprintf(id, "%s_%02x%02X%02X", "ESP32", mac[3], mac[4], mac[5]);
   cJSON_AddStringToObject(post_data, "clientId", id);
 
+  // Add default setpoint
   cJSON *status = cJSON_CreateObject();
   cJSON_AddNumberToObject(status, "setpoint", 20);
   cJSON_AddItemToObject(post_data, "status", status);
+
+  // Sensors
+  cJSON *sensors = cJSON_CreateArray();
+  // Fridge Temp
+  cJSON *fridge = cJSON_CreateObject();
+  cJSON_AddStringToObject(fridge, "name", "Fridge Temp");
+  cJSON_AddItemToArray(sensors, fridge);
+  // Beer Temp
+  cJSON *beer = cJSON_CreateObject();
+  cJSON_AddStringToObject(beer, "name", "Beer Temp");
+  cJSON_AddItemToArray(sensors, beer);
+  // Setpoint Target
+  cJSON *setpoint = cJSON_CreateObject();
+  cJSON_AddStringToObject(setpoint, "name", "Setpoint Target");
+  cJSON_AddItemToArray(sensors, setpoint);
+
+  // Add sensor arrat to object
+  cJSON_AddItemToObject(post_data, "sensors", sensors);
 
   printf("POST DATA %s", cJSON_Print(post_data));
 
@@ -223,6 +247,8 @@ esp_err_t http_reg_device(const char *jwt, char **deviceId)
   ESP_LOGE(TAG, "Device Registered: %s\n", *deviceId);
 
   esp_http_client_cleanup(client);
+  cJSON_Delete(post_data);
+  cJSON_Delete(device);
   free(response);
   // xSemaphoreGive(_xResponse);
   return ESP_OK;
@@ -269,6 +295,7 @@ esp_err_t http_get_device(const char *deviceId, const char *jwt)
   printf("device %s\n", cJSON_Print(device));
 
   esp_http_client_cleanup(client);
+  cJSON_Delete(device);
   free(response);
   return ESP_OK;
 }

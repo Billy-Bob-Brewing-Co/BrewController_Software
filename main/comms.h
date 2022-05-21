@@ -10,8 +10,7 @@
 
  END DESCRIPTION ***************************************************************/
 
-#ifndef MAIN_COMMS_H_
-#define MAIN_COMMS_H_
+#pragma once
 typedef struct
 {
     char *wifiSsid;
@@ -23,5 +22,3 @@ typedef struct
 } TCommsSetup;
 
 void comms_init(const TCommsSetup *const commsSetup);
-
-#endif

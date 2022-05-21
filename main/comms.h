@@ -6,22 +6,15 @@
 
  Creation Date:       9th November 2020
 
- Description:         
+ Description:
 
  END DESCRIPTION ***************************************************************/
 
-#ifndef MAIN_COMMS_H_
-#define MAIN_COMMS_H_
+#pragma once
 typedef struct
 {
-  char *wifiSsid;
-  char *wifiPass;
-  char *userEmail;
-  char *userPass;
-  char **userId;
-  char **deviceId;
+    char *wifiSsid;
+    char *wifiPass;
 } TCommsSetup;
 
 void comms_init(const TCommsSetup *const commsSetup);
-
-#endif

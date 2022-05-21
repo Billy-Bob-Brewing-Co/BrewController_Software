@@ -122,18 +122,6 @@ static esp_err_t initNvs(void)
         // Wifi Password
         nvsStringProv(my_handle, NVS_KEY_WIFI_PASS, &wifiPass);
 
-        // User Email
-        nvsStringProv(my_handle, NVS_KEY_USER_EMAIL, &userEmail);
-
-        // User Password
-        nvsStringProv(my_handle, NVS_KEY_USER_PASS, &userPass);
-
-        // User Id
-        nvsString(my_handle, NVS_KEY_USER_ID, &userId);
-
-        // device Id
-        nvsString(my_handle, NVS_KEY_DEVICE_ID, &deviceId);
-
         err = nvs_commit(my_handle);
         if (err == ESP_OK)
         {
@@ -165,10 +153,6 @@ void app_main()
     TCommsSetup commsSetup;
     commsSetup.wifiSsid = wifiSsid;
     commsSetup.wifiPass = wifiPass;
-    commsSetup.userEmail = userEmail;
-    commsSetup.userPass = userPass;
-    commsSetup.userId = &userId;
-    commsSetup.deviceId = &deviceId;
 
     comms_init(&commsSetup);
 }

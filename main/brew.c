@@ -6,7 +6,7 @@
 
  Creation Date:       11th November 2020
 
- Description:         
+ Description:
 
  END DESCRIPTION ***************************************************************/
 
@@ -107,33 +107,18 @@ static void vBrewTask(void *pvParameters)
     printf("Ambient Temp: %f\n", *ambTemp);
     printf("Beer Temp: %f\n", *beerTemp);
 
-    if (*ambTemp > *setTemp)
+    // Beer may need cooling
+    // If beer is warmer than setpoint by hysteresis value and fridge is off, turn fridge on
+    if ((*beerTemp > (*setTemp + temp_hysteresis)))
     {
-      // Beer may need cooling
-      // If beer is warmer than setpoint by hysteresis value and fridge is off, turn fridge on
-      if ((*beerTemp > (*setTemp + temp_hysteresis)) && !gpio_get_level(FRIDGEGPIO))
-      {
+        gpio_set_level(HEATPADGPIO, 0);
         gpio_set_level(FRIDGEGPIO, 1);
-      }
-      // Otherwise, if beer is colder than setpoint by hysteresis value and fridge is on, turn fridge off
-      else if ((*beerTemp < (*setTemp - temp_hysteresis)) && gpio_get_level(FRIDGEGPIO))
-      {
-        gpio_set_level(FRIDGEGPIO, 0);
-      }
     }
-    if (*ambTemp < *setTemp)
+    // Otherwise, if beer is colder than setpoint by hysteresis value and fridge is on, turn fridge off
+    else if ((*beerTemp < (*setTemp - temp_hysteresis)))
     {
-      // Beer may need heating
-      // If beer is warmer than setpoint by hysteresis value and heater is on, turn heater off
-      if ((*beerTemp > (*setTemp + temp_hysteresis)) && gpio_get_level(FRIDGEGPIO))
-      {
         gpio_set_level(FRIDGEGPIO, 0);
-      }
-      // Otherwise, if beer is colder than setpoint by hysteresis value and heater is off, turn heater on
-      else if ((*beerTemp < (*setTemp - temp_hysteresis)) && !gpio_get_level(FRIDGEGPIO))
-      {
-        gpio_set_level(FRIDGEGPIO, 1);
-      }
+        gpio_set_level(HEATPADGPIO, 1);
     }
 
     vTaskDelay(2000 / portTICK_PERIOD_MS);

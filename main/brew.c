@@ -4,20 +4,18 @@
 
 #include "brew.h"
 #include "esp_log.h"
-#include <freertos/task.h>
+#include "freertos/task.h"
+
 #include "owb.h"
 #include "owb_rmt.h"
 #include "ds18b20.h"
 
-#define GPIO_DS18B20_AMB 26
-#define GPIO_DS18B20_BEER 27
+#include "config.h"
+
 #define MAX_DEVICES 8
 #define DS18B20_RESOLUTION (DS18B20_RESOLUTION_12_BIT)
 #define SAMPLE_PERIOD (1000) // milliseconds
-#define FRIDGEGPIO 33
-#define HEATPADGPIO 32
-#define RED_LED_GPIO 21
-#define YELLOW_LED_GPIO 22
+
 
 static void vBrewTask(void *pvParameters);
 static void vStatusTask(void *pvParameters);
@@ -63,8 +61,8 @@ static void vBrewTask(void *pvParameters)
     OneWireBus *BeerTemp;
     owb_rmt_driver_info rmt_driver_info_amb;
     owb_rmt_driver_info rmt_driver_info_beer;
-    AmbTemp = owb_rmt_initialize(&rmt_driver_info_amb, GPIO_DS18B20_AMB, RMT_CHANNEL_1, RMT_CHANNEL_2);
-    BeerTemp = owb_rmt_initialize(&rmt_driver_info_beer, GPIO_DS18B20_BEER, RMT_CHANNEL_3, RMT_CHANNEL_4);
+    AmbTemp = owb_rmt_initialize(&rmt_driver_info_amb, PIN_TEMP_AMBIENT, RMT_CHANNEL_1, RMT_CHANNEL_2);
+    BeerTemp = owb_rmt_initialize(&rmt_driver_info_beer, PIN_TEMP_BEER, RMT_CHANNEL_3, RMT_CHANNEL_4);
     owb_use_crc(AmbTemp, true);
     owb_use_crc(BeerTemp, true);
     DS18B20_Info *device_amb = 0;
@@ -84,14 +82,14 @@ static void vBrewTask(void *pvParameters)
     ds18b20_set_resolution(ds18b20_info_amb, DS18B20_RESOLUTION);
     ds18b20_set_resolution(ds18b20_info_beer, DS18B20_RESOLUTION);
 
-    gpio_pad_select_gpio(FRIDGEGPIO);
-    gpio_pad_select_gpio(HEATPADGPIO);
-    gpio_pad_select_gpio(YELLOW_LED_GPIO);
-    gpio_pad_select_gpio(YELLOW_LED_GPIO);
-    gpio_set_direction(FRIDGEGPIO, GPIO_MODE_OUTPUT);
-    gpio_set_direction(HEATPADGPIO, GPIO_MODE_OUTPUT);
-    gpio_set_direction(YELLOW_LED_GPIO, GPIO_MODE_OUTPUT);
-    gpio_set_direction(YELLOW_LED_GPIO, GPIO_MODE_OUTPUT);
+    gpio_pad_select_gpio(PIN_RELAY_FRIDGE);
+    gpio_pad_select_gpio(PIN_RELAY_HEATBELT);
+    gpio_pad_select_gpio(PIN_LED_YELLOW);
+    gpio_pad_select_gpio(PIN_LED_YELLOW);
+    gpio_set_direction(PIN_RELAY_FRIDGE, GPIO_MODE_OUTPUT);
+    gpio_set_direction(PIN_RELAY_HEATBELT, GPIO_MODE_OUTPUT);
+    gpio_set_direction(PIN_LED_YELLOW, GPIO_MODE_OUTPUT);
+    gpio_set_direction(PIN_LED_YELLOW, GPIO_MODE_OUTPUT);
     while (1)
     {
         ds18b20_convert_and_read_temp(device_amb, ambTemp);
@@ -103,14 +101,14 @@ static void vBrewTask(void *pvParameters)
         // If beer is warmer than setpoint by hysteresis value and fridge is off, turn fridge on
         if ((*beerTemp > (*setTemp + temp_hysteresis)))
         {
-            gpio_set_level(HEATPADGPIO, 0);
-            gpio_set_level(FRIDGEGPIO, 1);
+            gpio_set_level(PIN_RELAY_HEATBELT, 0);
+            gpio_set_level(PIN_RELAY_FRIDGE, 1);
         }
         // Otherwise, if beer is colder than setpoint by hysteresis value and fridge is on, turn fridge off
         else if ((*beerTemp < (*setTemp - temp_hysteresis)))
         {
-            gpio_set_level(FRIDGEGPIO, 0);
-            gpio_set_level(HEATPADGPIO, 1);
+            gpio_set_level(PIN_RELAY_FRIDGE, 0);
+            gpio_set_level(PIN_RELAY_HEATBELT, 1);
         }
 
         vTaskDelay(2000 / portTICK_PERIOD_MS);

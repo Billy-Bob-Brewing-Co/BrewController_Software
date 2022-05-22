@@ -85,7 +85,7 @@ static void brew_log_data(float ambient_temp, float beer_temp)
     time(&now);
 
     /* Only log to brefather every 15min */
-    if ( now > (last_log_time + 60))
+    if ( now > (last_log_time + (CONFIG_LOG_PERIOD*60)))
     {
         last_log_time = now;
 

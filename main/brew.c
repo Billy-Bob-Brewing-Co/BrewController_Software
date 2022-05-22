@@ -15,7 +15,7 @@
 /* Time in milliseconds at which the temp is sampled and state updated */
 #define SAMPLE_PERIOD (2000)
 
-const float temp_hysteresis = 0.5;
+#define TEMPERATURE_HYSTERESIS (0.5)
 
 owb_rmt_driver_info ambient_temp_drv_info = {0};
 owb_rmt_driver_info beer_temp_drv_info = {0};
@@ -83,15 +83,22 @@ static void brew_main_task(void *pvParameters)
         printf("Ambient Temp: %f\n", ambient_temp);
         printf("Beer Temp: %f\n", beer_temp);
 
-        if ((beer_temp > (CONFIG_BEER_TEMP_SETPOINT + temp_hysteresis)))
+        /* Decide if we should heat or cool the beer */
+        if (beer_temp > CONFIG_BEER_TEMP_SETPOINT)
         {
             gpio_set_level(PIN_RELAY_HEATBELT, 0);
-            gpio_set_level(PIN_RELAY_FRIDGE, 1);
+            if (beer_temp > (CONFIG_BEER_TEMP_SETPOINT + TEMPERATURE_HYSTERESIS))
+            {
+                gpio_set_level(PIN_RELAY_FRIDGE, 1);
+            }
         }
-        else if ((beer_temp < (CONFIG_BEER_TEMP_SETPOINT - temp_hysteresis)))
+        else if (beer_temp < CONFIG_BEER_TEMP_SETPOINT)
         {
             gpio_set_level(PIN_RELAY_FRIDGE, 0);
-            gpio_set_level(PIN_RELAY_HEATBELT, 1);
+            if (beer_temp < (CONFIG_BEER_TEMP_SETPOINT - TEMPERATURE_HYSTERESIS))
+            {
+                gpio_set_level(PIN_RELAY_HEATBELT, 1);
+            }
         }
 
         vTaskDelay(SAMPLE_PERIOD / portTICK_PERIOD_MS);

@@ -1,14 +1,6 @@
-/* DESCRIPTION ***************************************************
-
- File:                brew.c
-
- Author:              Robert Carey
-
- Creation Date:       11th November 2020
-
- Description:
-
- END DESCRIPTION ***************************************************************/
+/*
+ * Copyright 2020 Robert Carey
+ */
 
 #include "brew.h"
 #include "esp_log.h"

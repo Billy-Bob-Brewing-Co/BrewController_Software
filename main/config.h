@@ -1,17 +1,9 @@
-/* DESCRIPTION ***************************************************
+/*
+ * Copyright 2020 Robert Carey
+ */
 
- File:                config.h
 
- Author:              Robert Carey
-
- Creation Date:       9th November 2020
-
- Description:         
-
- END DESCRIPTION ***************************************************************/
-
-#ifndef MAIN_CONFIG_H_
-#define MAIN_CONFIG_H_
+#pragma once
 
 #define NVS_PART_KEY "storage"         // partition key
 #define NVS_KEY_WIFI_SSID "wifissid"   //string
@@ -22,5 +14,3 @@
 #define NVS_KEY_USER_PASS "userpass"   //string
 #define NVS_KEY_USER_JWT "userjwt"     //string
 #define NVS_KEY_RST_CNT "rstcnt"       //uint16
-
-#endif

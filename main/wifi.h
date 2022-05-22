@@ -1,6 +1,7 @@
-#ifndef MAIN_WIFI_H_
-#define MAIN_WIFI_H_
+/*
+ * Copyright 2020 Robert Carey
+ */
+
+#pragma once
 
 void wifi_init_sta(char *ssid, char *password);
-
-#endif

@@ -1,20 +1,10 @@
-/* DESCRIPTION ***************************************************
+/*
+ * Copyright 2020 Robert Carey
+ */
 
- File:                brew.h
-
- Author:              Robert Carey
-
- Creation Date:       11th November 2020
-
- Description:
-
- END DESCRIPTION ***************************************************************/
-
-#ifndef MAIN_BREW_H_
-#define MAIN_BREW_H_
+#pragma once
 
 #include "esp_event.h"
-// #include "event_source.h"
 #include "esp_event_base.h"
 
 esp_event_loop_handle_t BREW_TASK;
@@ -37,5 +27,3 @@ typedef struct
 } brewStatus_t;
 
 void brew_init(void);
-
-#endif /* MAIN_BREW_H_ */

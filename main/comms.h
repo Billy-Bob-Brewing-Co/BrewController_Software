@@ -1,16 +1,9 @@
-/* DESCRIPTION ***************************************************
-
- File:                comms.h
-
- Author:              Robert Carey
-
- Creation Date:       9th November 2020
-
- Description:
-
- END DESCRIPTION ***************************************************************/
+/*
+ * Copyright 2020 Robert Carey
+ */
 
 #pragma once
+
 typedef struct
 {
     char *wifiSsid;

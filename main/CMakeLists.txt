@@ -1,10 +1,4 @@
 idf_component_register(SRCS "comms.c" "brew.c"
-                            "cJSON.c"
-                            "http.c"
                             "main.c"
-                            "owb_gpio.c"
-                            "owb.c"
-                            "owb_rmt.c"
-                            "ds18b20.c"
                             "wifi.c"
-                    INCLUDE_DIRS ".")
+                       INCLUDE_DIRS ".")

@@ -15,5 +15,11 @@ menu "Brew Controller Configuration"
         default 5
         help
             Set the Maximum retry to avoid station reconnecting to the AP unlimited when the AP is really inexistent.
+    config BEER_TEMP_SETPOINT
+        int "Beer Temperature Setpoint"
+        range 5 30
+        default 20
+        help
+            Set the target setpoint for the controller to attempt to get the beer temp too.
 
 endmenu

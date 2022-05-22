@@ -6,6 +6,7 @@
 #include "esp_log.h"
 #include "freertos/task.h"
 #include "time.h"
+#include "string.h"
 
 #include "owb.h"
 #include "owb_rmt.h"
@@ -13,6 +14,7 @@
 #include "cJSON.h"
 
 #include "config.h"
+#include "comms.h"
 
 static const char *TAG = "BREW";
 
@@ -91,12 +93,14 @@ static void brew_log_data(float ambient_temp, float beer_temp)
 
         cJSON *post_data = cJSON_CreateObject();
 
-        cJSON_AddStringToObject(post_data, "name", "Brew Controller");
+        cJSON_AddStringToObject(post_data, "name", CONFIG_DEVICE_NAME);
         cJSON_AddNumberToObject(post_data, "temp", beer_temp);
         cJSON_AddNumberToObject(post_data, "aux_temp", ambient_temp);
         cJSON_AddStringToObject(post_data, "temp_unit", "C");
 
         ESP_LOGI(TAG, "Data:\n%s", cJSON_Print(post_data));
+
+        comms_send_logs(cJSON_Print(post_data), strlen(cJSON_Print(post_data)));
 
         cJSON_Delete(post_data);
     }

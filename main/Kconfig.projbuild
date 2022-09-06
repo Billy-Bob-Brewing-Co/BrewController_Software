@@ -21,5 +21,21 @@ menu "Brew Controller Configuration"
         default 20
         help
             Set the target setpoint for the controller to attempt to get the beer temp too.
+    config LOG_PERIOD
+        int "Log Period"
+        range 0 60
+        default 16
+        help
+            Set the period to log data in minutes.
+    config WEBHOOK_URL
+        string "Webhook URL"
+        default "http://log.brewfather.net/stream?id=<custom-id>"
+        help
+            URL for brewfather custom stream webook.
+    config DEVICE_NAME
+        string "Device Name"
+        default "Brew Controller"
+        help
+            Name used to log the result.
 
 endmenu

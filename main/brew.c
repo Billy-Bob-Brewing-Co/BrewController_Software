@@ -5,17 +5,25 @@
 #include "brew.h"
 #include "esp_log.h"
 #include "freertos/task.h"
+#include "time.h"
+#include "string.h"
 
 #include "owb.h"
 #include "owb_rmt.h"
 #include "ds18b20.h"
+#include "cJSON.h"
 
 #include "config.h"
+#include "comms.h"
+
+static const char *TAG = "BREW";
 
 /* Time in milliseconds at which the temp is sampled and state updated */
 #define SAMPLE_PERIOD (2000)
 
 #define TEMPERATURE_HYSTERESIS (0.5)
+
+static time_t last_log_time;
 
 owb_rmt_driver_info ambient_temp_drv_info = {0};
 owb_rmt_driver_info beer_temp_drv_info = {0};
@@ -73,6 +81,31 @@ static float brew_get_temp(DS18B20_Info *sensor)
     return temperature;
 }
 
+static void brew_log_data(float ambient_temp, float beer_temp)
+{
+    time_t now;
+    time(&now);
+
+    /* Only log to brefather every 15min */
+    if ( now > (last_log_time + (CONFIG_LOG_PERIOD*60)))
+    {
+        last_log_time = now;
+
+        cJSON *post_data = cJSON_CreateObject();
+
+        cJSON_AddStringToObject(post_data, "name", CONFIG_DEVICE_NAME);
+        cJSON_AddNumberToObject(post_data, "temp", beer_temp);
+        cJSON_AddNumberToObject(post_data, "aux_temp", ambient_temp);
+        cJSON_AddStringToObject(post_data, "temp_unit", "C");
+
+        ESP_LOGI(TAG, "Data:\n%s", cJSON_Print(post_data));
+
+        comms_send_logs(cJSON_Print(post_data), strlen(cJSON_Print(post_data)));
+
+        cJSON_Delete(post_data);
+    }
+}
+
 static void brew_main_task(void *pvParameters)
 {
     while (1)
@@ -80,8 +113,7 @@ static void brew_main_task(void *pvParameters)
         float ambient_temp = brew_get_temp(ambient_temp_sensor);
         float beer_temp = brew_get_temp(beer_temp_sensor);
 
-        printf("Ambient Temp: %f\n", ambient_temp);
-        printf("Beer Temp: %f\n", beer_temp);
+        ESP_LOGI(TAG, "Beer: %.2fC, Ambient: %.2FC\n", beer_temp, ambient_temp);
 
         /* Decide if we should heat or cool the beer */
         if (beer_temp > CONFIG_BEER_TEMP_SETPOINT)
@@ -89,6 +121,7 @@ static void brew_main_task(void *pvParameters)
             gpio_set_level(PIN_RELAY_HEATBELT, 0);
             if (beer_temp > (CONFIG_BEER_TEMP_SETPOINT + TEMPERATURE_HYSTERESIS))
             {
+                ESP_LOGI(TAG, "Turn on fridge\n");
                 gpio_set_level(PIN_RELAY_FRIDGE, 1);
             }
         }
@@ -97,9 +130,12 @@ static void brew_main_task(void *pvParameters)
             gpio_set_level(PIN_RELAY_FRIDGE, 0);
             if (beer_temp < (CONFIG_BEER_TEMP_SETPOINT - TEMPERATURE_HYSTERESIS))
             {
+                ESP_LOGI(TAG, "Turn on heat\n");
                 gpio_set_level(PIN_RELAY_HEATBELT, 1);
             }
         }
+
+        brew_log_data(ambient_temp, beer_temp);
 
         vTaskDelay(SAMPLE_PERIOD / portTICK_PERIOD_MS);
     }
@@ -107,6 +143,8 @@ static void brew_main_task(void *pvParameters)
 
 void brew_init(void)
 {
+    time(&last_log_time);
+
     brew_init_peripherals();
 
     esp_event_loop_args_t brew_task_args = {

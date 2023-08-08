@@ -97,6 +97,9 @@ esp_err_t _http_event_handler(esp_http_client_event_t *evt)
         }
         output_len = 0;
         break;
+    default:
+        ESP_LOGI(TAG, "Unhandled event, id:%d", evt->event_id);
+        break;
     }
     return ESP_OK;
 }
@@ -116,7 +119,7 @@ esp_err_t comms_send_logs(const char *payload, size_t payload_len)
     esp_err_t err = esp_http_client_perform(client);
     if (err == ESP_OK)
     {
-        ESP_LOGI(TAG, "HTTP POST Status = %d, content_length = %d",
+        ESP_LOGI(TAG, "HTTP POST Status = %d, content_length = %lld",
                  esp_http_client_get_status_code(client),
                  esp_http_client_get_content_length(client));
     }

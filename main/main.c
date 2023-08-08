@@ -20,6 +20,7 @@ static const char *TAG = "MAIN";
 
 void app_main()
 {
+    ESP_LOGI(TAG, "Starting APP");
     brew_init();
 
     TCommsSetup commsSetup;

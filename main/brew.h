@@ -7,8 +7,6 @@
 #include "esp_event.h"
 #include "esp_event_base.h"
 
-esp_event_loop_handle_t BREW_TASK;
-
 ESP_EVENT_DECLARE_BASE(BREW_EVENTS); // declaration of the task events family
 
 enum

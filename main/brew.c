@@ -8,13 +8,15 @@
 #include "time.h"
 #include "string.h"
 
-#include "owb.h"
-#include "owb_rmt.h"
+#include "onewire_bus.h"
+#include "onewire_bus_rmt.h"
 #include "ds18b20.h"
 #include "cJSON.h"
 
 #include "config.h"
 #include "comms.h"
+
+esp_event_loop_handle_t BREW_TASK;
 
 static const char *TAG = "BREW";
 
@@ -25,59 +27,72 @@ static const char *TAG = "BREW";
 
 static time_t last_log_time;
 
-owb_rmt_driver_info ambient_temp_drv_info = {0};
-owb_rmt_driver_info beer_temp_drv_info = {0};
-
-DS18B20_Info *ambient_temp_sensor = NULL;
-DS18B20_Info *beer_temp_sensor = NULL;
+onewire_bus_handle_t ambient_temp_handle;
+onewire_bus_handle_t beer_temp_handle;
 
 /* Event source task related definitions */
 ESP_EVENT_DEFINE_BASE(BREW_EVENTS);
 
 static void brew_init_temp_sensors(void)
 {
-    /* Configure One Wire Bus */
-    OneWireBus *ambient_temp_owb = owb_rmt_initialize(&ambient_temp_drv_info, PIN_TEMP_AMBIENT,
-                                                      RMT_CHANNEL_1, RMT_CHANNEL_2);
-    owb_use_crc(ambient_temp_owb, true);
+    onewire_rmt_config_t config = {
+        .max_rx_bytes = 10, // 10 tx bytes(1byte ROM command + 8byte ROM number + 1byte device command)
+    };
 
-    OneWireBus *beer_temp_owb = owb_rmt_initialize(&beer_temp_drv_info, PIN_TEMP_BEER,
-                                                      RMT_CHANNEL_3, RMT_CHANNEL_4);
-    owb_use_crc(beer_temp_owb, true);
+    /* Initialise Ambient temp bus */
+    config.gpio_pin = PIN_TEMP_AMBIENT;
+    ESP_ERROR_CHECK(onewire_new_bus_rmt(&config, &ambient_temp_handle));
+    ESP_LOGI(TAG, "Ambient temp 1-wire bus installed");
 
-    ambient_temp_sensor = ds18b20_malloc();
-    ds18b20_init_solo(ambient_temp_sensor, ambient_temp_owb);
-    ds18b20_use_crc(ambient_temp_sensor, true);
-    ds18b20_set_resolution(ambient_temp_sensor, DS18B20_RESOLUTION_12_BIT);
+    /* Skip ROM id to address  all devices on the bus */
+    (void)ds18b20_set_resolution(ambient_temp_handle, NULL, DS18B20_RESOLUTION_12B);
+    (void)ds18b20_trigger_temperature_conversion(ambient_temp_handle, NULL);
 
-    beer_temp_sensor = ds18b20_malloc();
-    ds18b20_init_solo(beer_temp_sensor, beer_temp_owb);
-    ds18b20_use_crc(beer_temp_sensor, true);
-    ds18b20_set_resolution(beer_temp_sensor, DS18B20_RESOLUTION_12_BIT);
+    /* Initialise Beer temp bus */
+    config.gpio_pin = PIN_TEMP_BEER;
+    ESP_ERROR_CHECK(onewire_new_bus_rmt(&config, &beer_temp_handle));
+    ESP_LOGI(TAG, "Ambient temp 1-wire bus installed");
+
+    /* Skip ROM id to address  all devices on the bus */
+    (void)ds18b20_set_resolution(beer_temp_handle, NULL, DS18B20_RESOLUTION_12B);
+    (void)ds18b20_trigger_temperature_conversion(ambient_temp_handle, NULL);
 }
 
 static void brew_init_peripherals(void)
 {
     /* Configure GPIOs */
-    gpio_pad_select_gpio(PIN_RELAY_FRIDGE);
+    esp_rom_gpio_pad_select_gpio(PIN_RELAY_FRIDGE);
     gpio_set_direction(PIN_RELAY_FRIDGE, GPIO_MODE_OUTPUT);
 
-    gpio_pad_select_gpio(PIN_RELAY_HEATBELT);
+    esp_rom_gpio_pad_select_gpio(PIN_RELAY_HEATBELT);
     gpio_set_direction(PIN_RELAY_HEATBELT, GPIO_MODE_OUTPUT);
 
-    gpio_pad_select_gpio(PIN_LED_RED);
+    esp_rom_gpio_pad_select_gpio(PIN_LED_RED);
     gpio_set_direction(PIN_LED_RED, GPIO_MODE_OUTPUT);
 
-    gpio_pad_select_gpio(PIN_LED_YELLOW);
+    esp_rom_gpio_pad_select_gpio(PIN_LED_YELLOW);
     gpio_set_direction(PIN_LED_YELLOW, GPIO_MODE_OUTPUT);
 
     brew_init_temp_sensors();
 }
 
-static float brew_get_temp(DS18B20_Info *sensor)
+/**
+ * Read the temperature from the one wire bus. Currently only supports one device on the bus.
+ *
+ * @param handle Handle for the one wire bus
+ *
+ * @return Temperature in degrees celsius
+ */
+static float brew_get_temp(onewire_bus_handle_t handle)
 {
     float temperature = 0;
-    ds18b20_convert_and_read_temp(sensor, &temperature);
+
+    esp_err_t err = ds18b20_get_temperature(handle, NULL, &temperature);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to read temperature, err: %d\n", err);
+        return 0;
+    }
+
     return temperature;
 }
 
@@ -110,8 +125,8 @@ static void brew_main_task(void *pvParameters)
 {
     while (1)
     {
-        float ambient_temp = brew_get_temp(ambient_temp_sensor);
-        float beer_temp = brew_get_temp(beer_temp_sensor);
+        float ambient_temp = brew_get_temp(ambient_temp_handle);
+        float beer_temp = brew_get_temp(beer_temp_handle);
 
         ESP_LOGI(TAG, "Beer: %.2fC, Ambient: %.2FC\n", beer_temp, ambient_temp);
 
